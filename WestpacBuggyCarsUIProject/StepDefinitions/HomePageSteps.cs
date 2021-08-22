@@ -1,4 +1,5 @@
 ﻿using BoDi;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,13 +19,20 @@ namespace WestpacBuggyCarsUIProject.StepDefinitions
         public HomePageSteps(ContextObject context, IObjectContainer container) : base(context, container.Resolve<ScenarioContext>())
         {
             ContextObj = context;
+            _homePage = new HomePage(ContextObj);
         }
 
         [Then(@"User should able to see Home Page")]
         public void ThenUserShouldAbleToSeeHomePage()
         {
-            _homePage = new HomePage(ContextObj);
-            _homePage.ValidateHomePage();
+            Assert.IsTrue(_homePage.IsDisplayHomePage(), "Unable to login");
+        }
+
+        [When(@"User Navigates to profile Page")]
+        [Given(@"User Navigates to profile Page")]
+        public void GivenUserNavigatesToProfilePage()
+        {
+            _homePage.ClickOnProfile();
         }
 
     }

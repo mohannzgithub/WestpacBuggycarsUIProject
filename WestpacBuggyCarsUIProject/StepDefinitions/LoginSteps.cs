@@ -16,25 +16,19 @@ namespace WestpacBuggyCarsUIProject.StepDefinitions
         public LandingPageSteps(ContextObject context, IObjectContainer container) : base(context, container.Resolve<ScenarioContext>())
         {
             ContextObj = context;
-        }
-        
-        [Given(@"User navigates to Buggy cars website")]
-        public void GivenUserNavigatesToBuggyCarsWebsite()
-        {
             _landingPage = new LandingPage(ContextObj);
         }
 
-        [Given(@"User Enter the '(.*)' And '(.*)'")]
-        [When(@"User Enter the '(.*)' And '(.*)'")]
-        public void WhenUserEnterTheAnd(string username, string password)
+        [Given(@"User navigates to Buggy car with '(.*)' And '(.*)'")]
+        public void GivenUserNavigatesToBuggyCarWithAnd(string userName, string password)
         {
-            _landingPage.EnterLoginCredentials(username, password);
+            _landingPage.EnterLoginCredentials(userName, password);
         }
 
         [When(@"User Clicks on Login button")]
         public void WhenClickOnLoginButton()
         {
-            _landingPage.clickLoginButton();
+            _landingPage.ClickLoginButton();
         }
 
         [Then(@"User should able to see error message '(.*)'")]
@@ -42,16 +36,6 @@ namespace WestpacBuggyCarsUIProject.StepDefinitions
         {
             Assert.AreEqual(_landingPage.GetLoginErrorMessage(),expectedErrorMessage,"Invalid login error message");
         }
-
-
-        [Given(@"User Navigates to profile Page")]
-        public void GivenUserNavigatesToProfilePage()
-        {
-            _homePage.clickOnProfile();
-        }
-
-
-
 
     }
 }

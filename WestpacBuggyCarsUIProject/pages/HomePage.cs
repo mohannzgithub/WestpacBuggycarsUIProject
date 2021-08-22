@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,16 +17,18 @@ namespace WestpacBuggyCarsUIProject.pages
         public HomePage(ContextObject contextobj) : base(contextobj)
         {
         }
-        public void ValidateHomePage()
+          public void ClickOnProfile()
         {
-            waitForElement(_logout, 60);
-            Assert.IsTrue(contextObj.Driver.FindElement(_logout).Displayed,"Login unsuccessful");
+            WebDriverWait wait = new WebDriverWait(contextObj.Driver,System.TimeSpan.FromSeconds(60));
+            wait.Until(ExpectedConditions.ElementIsVisible(_profileLink));
+            WaitForElement(_profileLink, 60);
+            ClickElement(_profileLink);
         }
 
-        public void clickOnProfile()
+        public bool IsDisplayHomePage()
         {
-            waitForElement(_profileLink, 60);
-            clickElement(_profileLink);
+            WaitForElement(_logout, 60);
+            return contextObj.Driver.FindElement(_logout).Displayed;
         }
     }  
 }

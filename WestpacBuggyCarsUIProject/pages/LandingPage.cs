@@ -23,13 +23,14 @@ namespace WestpacBuggyCarsUIProject.pages
             contextObj.Driver.FindElement(_userName).SendKeys(username);
             contextObj.Driver.FindElement(_password).SendKeys(password);        
         }
-        public void clickLoginButton()
+        public void ClickLoginButton()
         {
+            WaitForElement(_loginButton, 60);
             contextObj.Driver.FindElement(_loginButton).Click();
         }
         public string GetLoginErrorMessage()
         {
-            waitForElement(_loginErrortext, 60);
+            WaitForElement(_loginErrortext, 60);
             return contextObj.Driver.FindElement(_loginErrortext).Text;
             
         }

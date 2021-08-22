@@ -86,9 +86,12 @@
     <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
     </Reference>
+    <Reference Include="WebDriver.Support, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.3.141.0\lib\net45\WebDriver.Support.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataModel\ContectObject.cs" />
+    <Compile Include="DataModel\ContextObject.cs" />
     <Compile Include="pages\BasePage.cs" />
     <Compile Include="pages\GenericPage.cs" />
     <Compile Include="pages\HomePage.cs" />
@@ -108,7 +111,9 @@
     <None Include="Features\1Login.feature">
       <LastGenOutput>1Login.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\Profile.feature" />
+    <None Include="Features\2Profiles.feature">
+      <LastGenOutput>2Profiles.feature.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
     <None Include="TestData\ProdData.json" />
     <None Include="TestData\QaData.json" />

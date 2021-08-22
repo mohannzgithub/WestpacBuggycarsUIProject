@@ -24,7 +24,6 @@ namespace WestpacBuggyCarsUIProject.StepDefinitions
             _container = container;
 
         }
-
         [BeforeScenario]
         public void SetUp()
         {
@@ -90,6 +89,7 @@ namespace WestpacBuggyCarsUIProject.StepDefinitions
 
             ContextObj.Driver = ContextObj.runOnGrid ? InitGrid() : InitLocal();
             ContextObj.Driver.Manage().Window.Maximize();
+            ContextObj.Driver.Manage().Timeouts().ImplicitWait=TimeSpan.FromSeconds(60);    
             ContextObj.Driver.Navigate().GoToUrl(ContextObj.URL);
         }
 
@@ -131,9 +131,7 @@ namespace WestpacBuggyCarsUIProject.StepDefinitions
             {
                 Console.WriteLine(stepTable);
             }
-            var error = scenarioContext.TestError;
-            //var stepTimeInSec
-
+      
         }
 
 
