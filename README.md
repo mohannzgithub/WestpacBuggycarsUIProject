@@ -24,4 +24,6 @@ In Visual Studio ,
 Navigate to View -> Test Explorer
 right click and run feature file
 
+![image](https://user-images.githubusercontent.com/88992582/130423973-880ce587-54d7-40a3-9ab5-9dd376a9c412.png)
+
 
