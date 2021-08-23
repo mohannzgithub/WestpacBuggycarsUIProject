@@ -3,8 +3,11 @@ UI Test Project for Buggy cars
 
 # 1. Prerequisites
 Visual Studio
+
 GIT Bash
+
 Chrome version 92
+
 # 2. Clone the Repository to the Local
 Open Git bash
 
