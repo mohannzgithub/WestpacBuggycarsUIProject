@@ -9,18 +9,18 @@ GIT Bash
 Chrome version 92
 
 # 2. Clone the Repository to the Local
+
 Open Git bash
 
 Clone repository locally by running hte following command
 
-https://github.com/mohannzgithub/WestpacBuggycarsUIProject.git
-
-Open Visual Studio
+git clone https://github.com/mohannzgithub/WestpacBuggycarsUIProject.git
 
 Click on File > Open
 
 Select the cloned repository
 
+or Open Visual Studio -Clone a repository-Select Git Hub under Browse a Repository(Provide Git hub credentials if asked) -Select WestpacBuggycarsUIProject
 
 # 3. Executing test
 In Visual Studio ,
